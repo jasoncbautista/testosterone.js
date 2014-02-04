@@ -11,7 +11,7 @@ if( this['document'] !=  null) {
 exports.count = 0;
 
 exports._markForWeb= function(text){
-    var body = document.getElementByTagName("body");
+    var body = document.getElementsByTagName("body");
     var element = document.createElement("div");
     element.innerHTML = text;
 };
