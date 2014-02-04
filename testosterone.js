@@ -1,5 +1,7 @@
-exports.count = 0;
+// If window is defined
+// exports = {};
 
+exports.count = 0;
 exports._markSuccess = function(testName){
     console.log("\033[92m Success \033[92m \033[0m ");
 };
@@ -28,9 +30,6 @@ exports.assertTrue= function(got){
     exports.assert(true, got);
 }
 
-
 exports._markSuccess();
 exports._markFailure();
 
-
-return exports;
