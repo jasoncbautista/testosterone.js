@@ -15,10 +15,12 @@ exports._markForWeb= function(text){
     var element = document.createElement("div");
     element.innerHTML = text;
     body.appendChild(element);
+    return element;
 };
 exports._markSuccess = function(testName){
     if (web) {
-        exports._markForWeb("Success");
+        var element = exports._markForWeb("Success");
+        element.setAttribute("style", "color: green");
     } else {
         console.log("\033[92m Success \033[92m \033[0m ");
     }
@@ -30,7 +32,8 @@ exports.log = function(log){
 
 exports._markFailure= function(testName){
     if (web) {
-        exports._markForWeb("Failure");
+        var element = exports._markForWeb("Failure");
+        element.setAttribute("style", "color: red");
     } else {
         console.log("\033[31m Failure \033[91m \033[0m ");
     }
