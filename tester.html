@@ -2,7 +2,11 @@
     <head>
         <script src="testosterone.js"></script>
         <script>
-            testosterone._markSuccess();
+
+            var runTests = function(){
+                testosterone._markSuccess();
+            };
+            document.addEventListener( "DOMContentLoaded", runTests, true);
         </script>
     </head>
 </html>
