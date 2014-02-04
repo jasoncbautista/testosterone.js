@@ -6,6 +6,8 @@
 
             var runTests = function(){
                 testosterone.assert(0, Sqor.Data.getAllPlayersCount());
+                // Failure example
+                testosterone.assert(1, Sqor.Data.getAllPlayersCount());
             };
 
             document.addEventListener( "DOMContentLoaded", runTests, true);
