@@ -1,9 +1,26 @@
 // If window is defined
 // exports = {};
 
+var testosterone = {};
+var web = false;
+if( window !=  null) {
+    var exports = {};
+    var web = true;
+}
+
 exports.count = 0;
+
+exports._markForWeb= function(text){
+    var body = document.getElementByTagName("body");
+    var element = document.createElement("div");
+    element.innerHTML = text;
+};
 exports._markSuccess = function(testName){
-    console.log("\033[92m Success \033[92m \033[0m ");
+    if (web) {
+        exports._markForWeb("success");
+    } else {
+        console.log("\033[92m Success \033[92m \033[0m ");
+    }
 };
 
 exports.log = function(log){
@@ -33,3 +50,4 @@ exports.assertTrue= function(got){
 exports._markSuccess();
 exports._markFailure();
 
+testosterone = exports;
