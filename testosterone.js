@@ -1,33 +1,36 @@
-var testosterone = { count: 0};
+exports.count = 0;
 
-testosterone._markSuccess = function(testName){
-    console.log("\033[92m Success \033[92m");
+exports._markSuccess = function(testName){
+    console.log("\033[92m Success \033[92m \033[0m ");
 };
 
-testosterone.log = function(log){
+exports.log = function(log){
     console.log(log);
 };
 
-testosterone._markFailure= function(testName){
+exports._markFailure= function(testName){
     console.log("\033[31m Failure \033[91m \033[0m ");
 };
 
-testosterone.assert = function(expected, got){
+exports.assert = function(expected, got){
     if (expected === got) {
-        testosterone._markSuccess();
+        exports._markSuccess();
     } else {
-        testosterone._markFailure();
+        exports._markFailure();
     }
 };
 
-testosterone.assertEquals = function(expected, got){
-    testosterone.assert(expected, got);
+exports.assertEquals = function(expected, got){
+    exports.assert(expected, got);
 }
 
-testosterone.assertTrue= function(got){
-    testosterone.assert(true, got);
+exports.assertTrue= function(got){
+    exports.assert(true, got);
 }
 
 
-testosterone._markSuccess();
-testosterone._markFailure();
+exports._markSuccess();
+exports._markFailure();
+
+
+return exports;
