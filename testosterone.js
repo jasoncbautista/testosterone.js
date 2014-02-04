@@ -1,7 +1,7 @@
 var testosterone = { count: 0};
 
 testosterone._markSuccess = function(testName){
-    console.log("Success");
+    console.log("\033[92m Success \033[92m");
 };
 
 testosterone.log = function(log){
