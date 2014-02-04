@@ -5,10 +5,9 @@
         <script>
 
             var runTests = function(){
-                testosterone._markSuccess();
-                testosterone._markSuccess();
-                testosterone._markFailure();
+                testosterone.assert(0, Sqor.Data.getAllPlayersCount());
             };
+
             document.addEventListener( "DOMContentLoaded", runTests, true);
         </script>
     </head>

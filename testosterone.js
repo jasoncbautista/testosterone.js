@@ -39,6 +39,11 @@ exports._markFailure= function(testName){
     }
 };
 
+
+// TODO: guard against comparing arrays
+exports.assertArraysEqual = function(expected, got){
+    // ...
+};
 exports.assert = function(expected, got){
     if (expected === got) {
         exports._markSuccess();
