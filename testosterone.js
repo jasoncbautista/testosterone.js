@@ -3,7 +3,7 @@
 
 var testosterone = {};
 var web = false;
-if( window !=  null) {
+if( this['document'] !=  null) {
     var exports = {};
     var web = true;
 }
